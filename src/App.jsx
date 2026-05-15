@@ -422,7 +422,21 @@ export default function App() {
   return (
     <div style={{ minHeight: "100vh" }}>
       {/* Confetti Easter Egg */}
-      {showConfetti && <Confetti width={window.innerWidth} height={window.innerHeight} />}
+      {showConfetti && (
+        <Confetti 
+          width={window.innerWidth} 
+          height={window.innerHeight}
+          numberOfPieces={200}
+          recycle={false}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            zIndex: 999,
+            pointerEvents: 'none'
+          }}
+        />
+      )}
       
       {/* NAV */}
       <nav
